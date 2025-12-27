@@ -4,8 +4,8 @@ We are investigating an intrusion involving a workstation owned by Bill Lumbergh
 
 We have acquired key forensic artifacts from Bill’s system to better understand what happened once he ran the malware.
 
-The full lab walkthrough and investigation can be read [here]().
-The Investigation Report can be read [here]()
+The full walkthrough and investigation steps can be read [here]() <br>
+The finalized Investigation Report can be read [here]()
 
 ## Tech Stack
 - VMWare 
