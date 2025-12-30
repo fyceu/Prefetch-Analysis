@@ -364,8 +364,6 @@ Let's search for the following in Timeline Explorer:
 - `lsass`
 - `\Windows\Backup`
 
-
-
 When searching `\Windows\Backup`, we found `SYSTEMINFO.EXE` accessing this directory, which is pretty unusual. 
 
 Let's go back to the command line to learn more about this prefetch file: 
