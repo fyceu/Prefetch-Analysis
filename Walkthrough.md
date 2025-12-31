@@ -14,8 +14,8 @@ To setup this lab environment, just run the following script in PowerShell:
 ```PowerShell
 IEX (New-Object Net.Webclient).downloadstring("https://ec-blog.s3.us-east-1.amazonaws.com/DFIR-Lab/PF_Lab/prep_lab.ps1")
 ```
-
 > This PowerShell script will install Eric Zimmerman's tools, their dependencies, and the Prefetch files used for analysis
+
 
 If ran successfully: 
 - Prefetch Files should be located at `C:\Cases\Prefetch`
