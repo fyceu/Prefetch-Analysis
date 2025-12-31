@@ -172,7 +172,7 @@ It would suggest that `B.EXE` is accessing browser history data based on the fol
 `\USERS\BILL.LUMBERGH\APPDATA\LOCAL\MICROSOFT\EDGE\USER DATA\DEFAULT\HISTORY` <br>
 `\USERS\BILL.LUMBERGH\APPDATA\ROAMING\MOZILLA\FIREFOX\PROFILES.INI`
 
-Additionally, `1.TXT` being located in the same directory may indicate a potential output file:
+Additionally, `1.TXT` being located in the same directory may indicate a potential output file <br>
 `\WINDOWS\TEMP\1.TXT`
 
 ---
@@ -203,7 +203,7 @@ Doing some research on `WCEAUX.DLL`, it is  a component of Windows Credential Ed
 `\WINDOWS\TEMP\WCEAUX.DLL`
 
 `WCEAUX.DLL` References:
-- https://jpcertcc.github.io/ToolAnalysisResultSheet/details/RemoteLogin-WCE.htm?source=post_page-----7bad60c232fe---------------------------------------
+- [https://jpcertcc.github.io/ToolAnalysisResultSheet/details/RemoteLogin-WCE.htm](https://jpcertcc.github.io/ToolAnalysisResultSheet/details/RemoteLogin-WCE.htm?source=post_page-----7bad60c232fe---------------------------------------)
 
 ----
 
@@ -256,7 +256,7 @@ C:\DFIR_Tools\ZimmermanTools\net6\PECmd.exe -f C:\Cases\Prefetch\POWERSHELL.EXE-
 `\WINDOWS\TEMP\_PSSCRIPTPOLICYTEST_UY13XD2B.4AM.PSM1 (Keyword: True)` <br>
 
 **Important Files or Directories  Referenced** <br>
-Taking a look at the run times, we can see that PowerShell was ran again within a few milliseconds. This is quite impossible through human interaction, so PowerShell was most likely ran through a script:
+Taking a look at the run times, we can see that PowerShell was ran again within a few milliseconds. This is quite impossible through human interaction, so PowerShell was most likely ran through a script <br>
 `2024-04-13 21:21:23, 2024-04-13 21:21:22` <br>
 `2024-04-13 20:50:40, 2024-04-13 20:50:40`
 
@@ -267,8 +267,10 @@ Looking even deeper we see that there is a list of potential business documents 
 
 `\USERS\BILL.LUMBERGH\DESKTOP\IT DOCS\ACCOUNTS-EXPORT-2023-07-24.XLS` <br>
 `\WINDOWS\BACKUP\LOGS\ACCOUNTS-EXPORT-2023-07-24.XLS` <br>
+
 `\USERS\BILL.LUMBERGH\DESKTOP\IT DOCS\CYBER-INSURANCE-POLICY-2023.PDF` <br>
 `\WINDOWS\BACKUP\LOGS\CYBER-INSURANCE-POLICY-2023.PDF` <br>
+
 `\USERS\BILL.LUMBERGH\DESKTOP\IT DOCS\DC-BACKUPS.ZIP` <br>
 `\WINDOWS\BACKUP\LOGS\DC-BACKUPS.ZIP` <br>
 
@@ -310,7 +312,7 @@ C:\DFIR_Tools\ZimmermanTools\net6\PECmd.exe -k backup,xls,pdf,zip -f C:\Cases\Pr
 **Important File or Directory Reference** <br>
 Using the new keywords we were able to find new hits. The directory `\WINDOWS\BACKUP\LOGS` appears to be a staging location for potential data exfiltration.
 
-In this Backup directory, we can see a configuration file for `RCLONE.EXE`: 
+In this Backup directory, we can see a configuration file for `RCLONE.EXE`:
 `\WINDOWS\BACKUP\RCLONE.CONF`
 
 Additionally, we can see memory dump file, `LSASS.DMP (Local Security Authority Subsystem Service)`. Doing some research, LSASS Memory is commonly used for credential dumping. 
@@ -364,9 +366,9 @@ Let's search for the following in Timeline Explorer:
 - `lsass`
 - `\Windows\Backup`
 
-When searching `\Windows\Backup`, we found `SYSTEMINFO.EXE` accessing this directory, which is pretty unusual. 
+When searching `\Windows\Backup`, we found another executable, `SYSTEMINFO.EXE` accessing this directory, which is pretty unusual. 
 
-Let's go back to the command line to learn more about this prefetch file: 
+Let's check out this prefetch file to see what else `SYSTEMINFO.EXE` accessed: 
 ```PowerShell
 PS C:\Users\JohnDoe> C:\DFIR_Tools\ZimmermanTools\net6\PECmd.exe -k backup -f C:\Cases\Prefetch\SYSTEMINFO.EXE-644FF4E7.pf
 ```
