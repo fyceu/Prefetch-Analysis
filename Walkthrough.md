@@ -16,6 +16,10 @@ IEX (New-Object Net.Webclient).downloadstring("https://ec-blog.s3.us-east-1.amaz
 ```
 > This PowerShell script will install Eric Zimmerman's tools, their dependencies, and the Prefetch files used for analysis
 
+<p align="center">
+    <img src="https://github.com/fyceu/Prefetch-Analysis/blob/WIP/2025-12-26%2022-16-09_3%20(1).gif)">
+</p> 
+
 
 If ran successfully: 
 - Prefetch Files should be located at `C:\Cases\Prefetch`
