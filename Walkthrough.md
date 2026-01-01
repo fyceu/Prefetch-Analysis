@@ -533,10 +533,9 @@ Now that we have every important even tagged, we can clear our search and filter
   <img width="1568" height="608" alt="Screenshot_22" src="https://github.com/user-attachments/assets/9fd37204-d860-4b37-a7b2-13c5e1216ef1" />
 </p>
 
-
 **Executable Extracted** <br>
 Bill was able to download an archive file from the internet containing the cracked version of Burpsuite. He utilized 7ZG.exe to extract the files from the archive file:
-- Timestamp: `2024-03-12 18:35:51`
+- Earliest Timestamp: `2024-03-12 18:35:51`
 - File Name: `BURPSUITE-PRO-CRACKED.7Z`
 - Full Path: `\USERS\BILL.LUMBERGH\DOWNLOADS\BURPSUITE-PRO-CRACKED.7Z`
 - Prefetch File: `7ZG.EXE-D9AA3A0B.pf`
@@ -544,7 +543,7 @@ Bill was able to download an archive file from the internet containing the crack
 
 **Executable Launched** <br>
 Bill launched the extracted Burpsuite file:
-- Timestmap: `2024-03-12 18:36:11`
+- Earliest Timestmap: `2024-03-12 18:36:11`
 - File Name: `BURPSUITE-PRO-CRACKED.EXE`
 - Full Path: `\USERS\BILL.LUMBERGH\DOWNLOADS\BURPSUITE-PRO-CRACKED.EXE`
 - Prefetch File: `BURPSUITE-PRO-CRACKED.EXE-EF7051A8.pf`
@@ -552,35 +551,35 @@ Bill launched the extracted Burpsuite file:
 
 **Suspicious Activity Begins** <br>
 Roughly 20 minutes after the applicaiton was launched, multiple suspicious executables began running on in Bill's `\WINDOWS\TEMP` directory. The first file, `B.EXE`, was seen accessing browser history of different browsers in Bill's `USERS\BILL.LUMBERGH\APPDATA` directory:
-- Timestamp: `2024-03-12 18:55:13`
+- Earliest Timestamp: `2024-03-12 18:55:13`
 - File Name: `B.EXE`
 - Full Path: `\WINDOWS\TEMP\B.EXE`
 - Prefetch File: `B.EXE-3590BF0.pf`
 - Prefetch Hash: 
 
 Another executable, `C.EXE`, is seen launching in Bill's `\WINDOWS\TEMP` directory. `C.EXE` is recorded acccessing `WCEAUX.DLL` which has been commonly used in collecting credentials and passwords through memory:
-- Timestamp: `2024-03-12 18:57:58` through `2024-03-12 19:02:37`
+- Earliest Timestamp: `2024-03-12 18:57:58`
 - File Name: `C.EXE`
 - Full Path: `\WINDOWS\TEMP\C.EXE`
 - Prefetch File: `C.EXE-C6AEC675.pf`
 - Prefetch Hash:
 
 `P.EXE` was executed in `WINDOWS\TEMP` but there were no associated files.
-  - Timestamp: `2024-03-12 19:03:27`
+  - Earliest Timestamp: `2024-03-12 19:03:27`
   - File Name: `P.EXE`
   - Full Path: `\WINDOWS\TEMP\P.EXE`
   - Prefetch File: `P.EXE-C2093F36.pf`
   - Prefetch Hash:
 
 `RUNDLL32.EXE` 
-- Timestamp: `2024-03-12 19:06:13`
+- Earliest Timestamp: `2024-03-12 19:06:13`
 - File Name: `RUNDLL32.EXE`
 - Full Path;
 - Prefetch File:
 - Prefetch Hash:
 
 `SYSTEMINFO.EXE` enumerating host data: 
-- Timestamp: `2024-03-12 19:11:24` through `2024-03-12 19:26:53`
+- Earliest Timestamp: `2024-03-12 19:11:24`
 - File Name:
 - Full Path:
 - Prefetch File:
@@ -588,7 +587,7 @@ Another executable, `C.EXE`, is seen launching in Bill's `\WINDOWS\TEMP` directo
 
 **Malicious Scripting** <br> 
 PowerShell is seen copying multiple sensitive business doucments from Bill's Desktop into a staging directory `\WINDOWS\BACKUP\LOGS`:
-- Timestamp: `2024-03-12 19:14:15`
+- Earliest Timestamp: `2024-03-12 19:14:15`
 - File Name: `POWERSHELL.EXE`
 - Full Path: `\WINDOWS\SYSTEM32\WINDOWSPOWERSHELL\V1.0\POWERSHELL.EXE`
 - Prefetch File: `POWERSHELL.EXE-022A1004.pf`
@@ -596,7 +595,7 @@ PowerShell is seen copying multiple sensitive business doucments from Bill's Des
 
 **Potential Data Exfiltration** <br>
 `RCLONE.EXE`, a cloud syncing and file management tool, is seen executing within the staging directory, `\WINDOWS\BACKUP`. It is safe to assume that the documents within this file were exfiltrated to a cloud platform. This can be confirmed by looking at the Network activity of this endpoint.
-- Timestamp: `2024-03-12 19:19:48`
+- Earliest Timestamp: `2024-03-12 19:19:48`
 - File Name: `RCLONE.EXE`
 - Full Path; `\WINDOWS\BACKUP\RCLONE.EXE`
 - Prefetch File: `RCLONE.EXE-56772E5D.pf`
@@ -604,7 +603,7 @@ PowerShell is seen copying multiple sensitive business doucments from Bill's Des
 
 **Data Clean Up** <br>
 Lastly, `SD.EXE`, 
-- Timestamp: `2024-03-12 19:26:11`
+- Earliest Timestamp: `2024-03-12 19:26:11`
 - File Name: `SD.EXE`
 - Full Path: `\WINDOWS\BACKUP\SD.EXE`
 - Prefetch File: `SD.EXE-A541D1D9.pf`
