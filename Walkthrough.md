@@ -100,7 +100,7 @@ Below is a list of applications that are suspicious or could be used as a [LOLbi
 
 ## Analyzing Prefetch Files
 Based on the timeline, we were able to find interesting executables that are worth investigating. We can use `PECmd.exe` to analyze individual Prefetch files to obtain the following information:
-- Full System Timestamps
+- Full System Timestamps (8 most recent)
 - Execution Count
 - Directories Referenced
 - Files Referenced
