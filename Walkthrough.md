@@ -558,12 +558,33 @@ Roughly 20 minutes after the applicaiton was launched, multiple suspicious execu
 - Prefetch File: `B.EXE-3590BF0.pf`
 - Prefetch Hash: 
 
-Another executable, `C.EXE`, is seen launching in Bill's `WINDOWS\TEMP` directory. `C.EXE` is recorded acccessing `WCEAUX.DLL` which has been commonly used in collecting credentials and passwords through memory:
-- Timestamp: `2024-03-12 19:02:37`
+Another executable, `C.EXE`, is seen launching in Bill's `\WINDOWS\TEMP` directory. `C.EXE` is recorded acccessing `WCEAUX.DLL` which has been commonly used in collecting credentials and passwords through memory:
+- Timestamp: `2024-03-12 18:57:58` through `2024-03-12 19:02:37`
 - File Name: `C.EXE`
 - Full Path: `\WINDOWS\TEMP\C.EXE`
 - Prefetch File: `C.EXE-C6AEC675.pf`
 - Prefetch Hash:
+
+`P.EXE` was executed in `WINDOWS\TEMP` but there were no associated files.
+  - Timestamp: `2024-03-12 19:03:27`
+  - File Name: `P.EXE`
+  - Full Path: `\WINDOWS\TEMP\P.EXE`
+  - Prefetch File: `P.EXE-C2093F36.pf`
+  - Prefetch Hash:
+
+`RUNDLL32.EXE` 
+- Timestamp: `2024-03-12 19:06:13`
+- File Name: `RUNDLL32.EXE`
+- Full Path;
+- Prefetch File:
+- Prefetch Hash:
+
+`SYSTEMINFO.EXE` enumerating host data: 
+- Timestamp: `2024-03-12 19:11:24` through `2024-03-12 19:26:53`
+- File Name:
+- Full Path:
+- Prefetch File:
+- Prefetch Hash: 
 
 **Malicious Scripting** <br> 
 PowerShell is seen copying multiple sensitive business doucments from Bill's Desktop into a staging directory `\WINDOWS\BACKUP\LOGS`:
@@ -571,7 +592,7 @@ PowerShell is seen copying multiple sensitive business doucments from Bill's Des
 - File Name: `POWERSHELL.EXE`
 - Full Path: `\WINDOWS\SYSTEM32\WINDOWSPOWERSHELL\V1.0\POWERSHELL.EXE`
 - Prefetch File: `POWERSHELL.EXE-022A1004.pf`
-- Prefetch Hash:
+- Prefetch Hash: 
 
 **Potential Data Exfiltration** <br>
 `RCLONE.EXE`, a cloud syncing and file management tool, is seen executing within the staging directory, `\WINDOWS\BACKUP`. It is safe to assume that the documents within this file were exfiltrated to a cloud platform. This can be confirmed by looking at the Network activity of this endpoint.
@@ -581,6 +602,10 @@ PowerShell is seen copying multiple sensitive business doucments from Bill's Des
 - Prefetch File: `RCLONE.EXE-56772E5D.pf`
 - Prefetch Hash:
 
-**Data Clean Up - Hiding Their Tracks**
+**Data Clean Up** <br>
 Lastly, `SD.EXE`, 
-
+- Timestamp: `2024-03-12 19:26:11`
+- File Name: `SD.EXE`
+- Full Path: `\WINDOWS\BACKUP\SD.EXE`
+- Prefetch File: `SD.EXE-A541D1D9.pf`
+- Prefetch Hash: 
