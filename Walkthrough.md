@@ -1,13 +1,11 @@
 ## Table of Contents
 
-1. [Prefetch Intro]()
-2. [Lab Setup]()
-3. [Creating Prefetch Timeline]()
-4. [Analyzing Prefetch Files]()
-5. [Finalized Timeline]()
-## Prefetch Intro
-## Lab Setup
+1. [Lab Setup]()
+2. [Creating Prefetch Timeline]()
+3. [Analyzing Prefetch Files]()
+4. [Finalized Timeline]()
 
+## Lab Setup
 This lab must be conducted on a Windows machine, so I used VMWare to spin up a Windows 11 VM for free.
 
 To setup this lab environment, just run the following script in PowerShell:
