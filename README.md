@@ -57,5 +57,5 @@ Monitor and create alerts for the following PowerShell activity:
 Reinforce Initech's Acceptable Use Policies and emphasize clear consequences for policy violations
 
 Educate employees on the risks of downloading cracked or unauthorized software:
-- malware infection
-- data theft or data exfiltration
+- Malware infection
+- Data theft or data exfiltration
