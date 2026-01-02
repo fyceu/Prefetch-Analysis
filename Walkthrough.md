@@ -1,9 +1,10 @@
 ## Table of Contents
 
-1. [Lab Setup]()
-2. [Creating Prefetch Timeline]()
-3. [Analyzing Prefetch Files]()
-4. [Finalized Timeline]()
+1. [Lab Setup](https://github.com/fyceu/Prefetch-Analysis/blob/main/Walkthrough.md#lab-setup)
+2. [Creating Prefetch Timeline](https://github.com/fyceu/Prefetch-Analysis/blob/main/Walkthrough.md#creating-prefetch-timeline)
+3. [Analyzing Prefetch Files](https://github.com/fyceu/Prefetch-Analysis/blob/main/Walkthrough.md#analyzing-prefetch-files)
+4. [Drafting a Timeline](https://github.com/fyceu/Prefetch-Analysis/blob/main/Walkthrough.md#drafting-a-timeline-)
+5. [Finalized Timeline](https://github.com/fyceu/Prefetch-Analysis/blob/main/Walkthrough.md#finalized-timeline)
 
 ## Lab Setup
 This lab must be conducted on a Windows machine, so I used VMWare to spin up a Windows 11 VM for free.
@@ -537,7 +538,6 @@ Bill downloaded an archive file from the internet containing the cracked version
 - File Name: `BURPSUITE-PRO-CRACKED.7Z`
 - Full Path: `\USERS\BILL.LUMBERGH\DOWNLOADS\BURPSUITE-PRO-CRACKED.7Z`
 - Prefetch File: `7ZG.EXE-D9AA3A0B.pf`
-- Prefetch Hash:
 
 ### Malicious Executable Launched
 Shortly after the extraction, the Bill launched the extracted Burpsuite file directly from thier downloads folder:
@@ -545,7 +545,6 @@ Shortly after the extraction, the Bill launched the extracted Burpsuite file dir
 - File Name: `BURPSUITE-PRO-CRACKED.EXE`
 - Full Path: `\USERS\BILL.LUMBERGH\DOWNLOADS\BURPSUITE-PRO-CRACKED.EXE`
 - Prefetch File: `BURPSUITE-PRO-CRACKED.EXE-EF7051A8.pf`
-- Prefetch Hash:
 
 ### Post-Execution Activity
 Roughly 20 minutes after the applicaiton was launched, multiple suspicious executables began running from the `\WINDOWS\TEMP` directory. `B.EXE` was seen accessing browser history from Chrome, Edge, and Firefox, indicating reconnaissance and enumeration.
@@ -553,7 +552,6 @@ Roughly 20 minutes after the applicaiton was launched, multiple suspicious execu
 - File Name: `B.EXE`
 - Full Path: `\WINDOWS\TEMP\B.EXE`
 - Prefetch File: `B.EXE-3590BF0.pf`
-- Prefetch Hash: 
 
 ### Credential Access
 Another executable, `C.EXE`, is seen launching in Bill's `\WINDOWS\TEMP` directory. `C.EXE` is seen referencing `WCEAUX.DLL`, strongly suggesting crednetial dumping from memory.
@@ -561,7 +559,6 @@ Another executable, `C.EXE`, is seen launching in Bill's `\WINDOWS\TEMP` directo
 - File Name: `C.EXE`
 - Full Path: `\WINDOWS\TEMP\C.EXE`
 - Prefetch File: `C.EXE-C6AEC675.pf`
-- Prefetch Hash:
 
 ### Additional TEMP Execution
 Though no references to previous taggged artefacts, `P.EXE` was seen being executed in `WINDOWS\TEMP`
@@ -569,7 +566,6 @@ Though no references to previous taggged artefacts, `P.EXE` was seen being execu
   - File Name: `P.EXE`
   - Full Path: `\WINDOWS\TEMP\P.EXE`
   - Prefetch File: `P.EXE-C2093F36.pf`
-  - Prefetch Hash:
 
 ### Credential Dumping
 `RUNDLL32.EXE` accessed `\WINDOWS\BACKUP\LOGS\LSASS.DMP`, indicating it was likely used in part of a LSASS Memory Dumping process. This is also the first time a malicious file accessed the staging directory `\WINDOWS\BACKUP\LOGS`, classifying `RUNDLL32.EXE` as a LOLbin.
@@ -577,7 +573,6 @@ Though no references to previous taggged artefacts, `P.EXE` was seen being execu
 - File Name: `RUNDLL32.EXE`
 - Full Path: `\WINDOWS\SYSTEM32\RUNDLL32.EXE`
 - Prefetch File: `RUNDLL32.EXE-9698B756.pf`
-- Prefetch Hash:
 
 ### Host Reconnaissance
 `SYSTEMINFO.EXE` was seen executing multiple times. With `\WINDOWS\BACKUP\INFO.TXT` being referenced, it suggests that `SYSTEMINFO.EXE` was being used for host reconnaissance. 
@@ -585,7 +580,6 @@ Though no references to previous taggged artefacts, `P.EXE` was seen being execu
 - File Name: `SYSTEMINFO.EXE`
 - Full Path: `\WINDOWS\SYSTEM32\SYSTEMINFO.EXE`
 - Prefetch File: `SYSTEMINFO.EXE-644FF4E7.pf`
-- Prefetch Hash: 
 
 ### Malicious Scripting <br> 
 PowerShell is seen copying multiple sensitive business doucments from Bill's Desktop into the primary staging directory `\WINDOWS\BACKUP\LOGS`
@@ -593,7 +587,6 @@ PowerShell is seen copying multiple sensitive business doucments from Bill's Des
 - File Name: `POWERSHELL.EXE`
 - Full Path: `\WINDOWS\SYSTEM32\WINDOWSPOWERSHELL\V1.0\POWERSHELL.EXE`
 - Prefetch File: `POWERSHELL.EXE-022A1004.pf`
-- Prefetch Hash: 
 
 ### Data Exfiltration <br>
 `RCLONE.EXE`, a cloud syncing and file management tool, is seen executing within the staging directory, `\WINDOWS\BACKUP`. The presence of its configuration file, `RCLONE.conf`, within this directory strongly indicates data exfiltration to an external cloud service.
@@ -601,7 +594,6 @@ PowerShell is seen copying multiple sensitive business doucments from Bill's Des
 - File Name: `RCLONE.EXE`
 - Full Path; `\WINDOWS\BACKUP\RCLONE.EXE`
 - Prefetch File: `RCLONE.EXE-56772E5D.pf`
-- Prefetch Hash:
 
 ### Post-Exfiltration Clean Up <br>
 `SD.EXE` accesssed the same staging directory and files as `RCLONE.EXE`. With this being the last suspicious execution and common attacker techniques, `SD.EXE` was most likely used for anti-forensic purposes, removing evidence after successful exfiltration. 
@@ -609,4 +601,3 @@ PowerShell is seen copying multiple sensitive business doucments from Bill's Des
 - File Name: `SD.EXE`
 - Full Path: `\WINDOWS\BACKUP\SD.EXE`
 - Prefetch File: `SD.EXE-A541D1D9.pf`
-- Prefetch Hash: 
