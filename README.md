@@ -11,6 +11,11 @@ We have acquired key forensic artifacts from Bill’s system to better understan
 The full walkthrough and investigation steps can be read [here]() <br>
 
 ## Tech Stack
+<img width="70" height="70" alt="image" src="https://github.com/user-attachments/assets/69213894-7080-4063-8d1b-45e07dd20413" />
+<img width="70" height="70" alt="image" src="https://github.com/user-attachments/assets/ecd8816b-ea1a-41ff-8a48-2feb8925ef89" />
+<img width="70" height="70" alt="image" src="https://github.com/user-attachments/assets/fc7d980d-917f-4cca-a18a-4c5acf496988" />
+<img width="70" height="70" alt="image" src="https://github.com/user-attachments/assets/72f8d3a9-0b95-43ac-9666-754feaf516d9" />
+
 - VMWare 
 - Windows 11 VM 
 - [Eric Zimmerman's Tools](https://ericzimmerman.github.io/#!index.md)
