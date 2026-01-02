@@ -24,6 +24,17 @@ The full walkthrough and investigation steps can be read [here]() <br>
 - PowerShell
 
 ## Executive Summary
+Analysis of the collected artifacts revealed a cracked version of Burp Suite Pro was downloaded and executed by the user, initiating a multi-stage intrusion on the system.
+
+Following execution, several unfamiliar binaries were launched from temporary directories, and native Windows utilities were abused to perform system reconnaissance and credential harvesting. Sensitive business documents were later copied into a staging directory which was then accessed by a cloud synchronization tool, strongly suggesting that sensitive data was exfiltrated to an external cloud service. The intrusion concluded with additional activity consistent with post-exfiltration cleanup and anti-forensic behavior.
+
+The findings confirm a deliberate compromise resulting in credential exposure and potential data loss. 
+
+A detailed walkthrough of these findings can be read [here]()
+
+<p align="center">
+	<img width="1000" height="800" alt="Screenshot 2026-01-01 at 7 41 54 PM" src="https://github.com/user-attachments/assets/749c9f33-15e4-4f61-8856-986108457f22" />
+</p>
 
 ## Recommendations
 Based on the findings of this investigation, the following security recommendations are provided to help prevent similar incidents and improve detection capabilities
