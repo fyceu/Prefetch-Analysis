@@ -59,3 +59,6 @@ Reinforce Initech's Acceptable Use Policies and emphasize clear consequences for
 Educate employees on the risks of downloading cracked or unauthorized software:
 - Malware infection
 - Data theft or data exfiltration
+
+## Credit
+Thank you to Eric Capuano for creating this [Prefetch Analysis Lab](https://blog.ecapuano.com/p/prefetch-analysis-lab)
